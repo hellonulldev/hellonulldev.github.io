@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NullDev - Simple Apps for Everyone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 12px;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            font-weight: 700;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        /* Apps Section */
+        .apps-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .app-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 22.5%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .app-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .app-name-local {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .app-description {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-appstore {
+            background: #000;
+            color: white;
+        }
+
+        .btn-appstore:hover {
+            background: #333;
+        }
+
+        .btn-playstore {
+            background: #01875f;
+            color: white;
+        }
+
+        .btn-playstore:hover {
+            background: #016d4d;
+        }
+
+        .btn-disabled {
+            background: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        footer a:hover {
+            border-bottom-color: white;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 36px;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .language-selector {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="ko">한국어</button>
+        <button class="lang-btn" data-lang="ja">日本語</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">NullDev</div>
+            <div class="tagline" data-i18n="tagline">Simple Apps for Everyone</div>
+            <div class="subtitle" data-i18n="subtitle">Making your daily decisions easier</div>
+        </header>
+
+        <section class="apps-section">
+            <h2 class="section-title" data-i18n="our-apps">Our Apps</h2>
+            
+            <div class="apps-grid">
+                <!-- Indecisive App -->
+                <div class="app-card">
+                    <img src="assets/indecisive-icon.png" alt="Indecisive App Icon" class="app-icon">
+                    <h3 class="app-name">Indecisive</h3>
+                    <div class="app-name-local">결정장애 / 優柔不断</div>
+                    <p class="app-description" data-i18n="indecisive-desc">
+                        Can't decide what to do? Let Indecisive help you make quick decisions with smart suggestions and witty advice.
+                    </p>
+                    <div class="download-buttons">
+                        <a href="https://apps.apple.com/app/id6757303507" class="btn btn-appstore" target="_blank" rel="noopener noreferrer">
+                            🍎 App Store
+                        </a>
+                        <a href="#" class="btn btn-playstore btn-disabled">
+                            📱 Google Play
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HabitThree App -->
+                <div class="app-card">
+                    <img src="assets/habitthree-icon.png" alt="Three Habits App Icon" class="app-icon">
+                    <h3 class="app-name" data-i18n="habitthree-name">Three Habits</h3>
+                    <div class="app-name-local">3개의 습관 / 3つの習慣</div>
+                    <p class="app-description" data-i18n="habitthree-desc">
+                        Focus on what matters. Track up to 3 habits daily with a minimal, distraction-free interface. No pressure, just progress.
+                    </p>
+                    <div class="download-buttons">
+                        <a href="https://apps.apple.com/app/id6757355894" class="btn btn-appstore" target="_blank" rel="noopener noreferrer">
+                            🍎 App Store
+                        </a>
+                        <a href="#" class="btn btn-playstore btn-disabled">
+                            📱 Google Play
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>NullDev</strong> © 2026</p>
+            <p style="margin-top: 10px;"><span data-i18n="contact">Contact</span>: <a href="mailto:hello.nulldev@gmail.com">hello.nulldev@gmail.com</a></p>
+            
+            <div class="footer-links">
+                <a href="https://hellonulldev.github.io/Policy/" data-i18n="privacy-policy">Privacy Policy</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                'tagline': 'Simple Apps for Everyone',
+                'subtitle': 'Making your daily decisions easier',
+                'our-apps': 'Our Apps',
+                'indecisive-desc': "Can't decide what to do? Let Indecisive help you make quick decisions with smart suggestions and witty advice.",
+                'habitthree-name': 'Three Habits',
+                'habitthree-desc': 'Focus on what matters. Track up to 3 habits daily with a minimal, distraction-free interface. No pressure, just progress.',
+                'contact': 'Contact',
+                'privacy-policy': 'Privacy Policy'
+            },
+            ko: {
+                'tagline': '모두를 위한 심플한 앱',
+                'subtitle': '일상의 결정을 더 쉽게',
+                'our-apps': '우리의 앱',
+                'indecisive-desc': '결정하기 어려우신가요? Indecisive가 현명한 제안과 재치있는 조언으로 빠른 결정을 도와드립니다.',
+                'habitthree-name': '3개의 습관',
+                'habitthree-desc': '중요한 것에 집중하세요. 미니멀하고 방해받지 않는 인터페이스로 매일 최대 3개의 습관을 추적하세요. 압박 없이, 그저 진전만.',
+                'contact': '문의',
+                'privacy-policy': '개인정보처리방침'
+            },
+            ja: {
+                'tagline': 'みんなのためのシンプルなアプリ',
+                'subtitle': '日常の決断をもっと簡単に',
+                'our-apps': '私たちのアプリ',
+                'indecisive-desc': '決められない？Indecisiveが賢い提案とウィットに富んだアドバイスで素早い決断をサポートします。',
+                'habitthree-name': '3つの習慣',
+                'habitthree-desc': '大切なことに集中しましょう。ミニマルで邪魔のないインターフェースで毎日最大3つの習慣を追跡します。プレッシャーなし、ただ進歩のみ。',
+                'contact': 'お問い合わせ',
+                'privacy-policy': 'プライバシーポリシー'
+            }
+        };
+
+        // Language switching
+        const langButtons = document.querySelectorAll('.lang-btn');
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active button
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Update text content
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Load saved language preference or detect browser language
+        const savedLang = localStorage.getItem('preferredLanguage');
+        const browserLang = navigator.language.split('-')[0];
+        const initialLang = savedLang || (translations[browserLang] ? browserLang : 'en');
+        setLanguage(initialLang);
+    </script>
+</body>
+</html>
