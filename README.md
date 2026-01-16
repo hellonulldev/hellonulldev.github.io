@@ -4,7 +4,7 @@ Official website for NullDev apps.
 
 ## 🌐 Live Site
 
-Visit: https://hellonulldev.github.io/home/
+Visit: https://hellonulldev.github.io/
 
 ## 📱 Featured Apps
 
