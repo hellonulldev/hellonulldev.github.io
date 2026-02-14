@@ -16,6 +16,10 @@ Visit: https://hellonulldev.github.io/
   - [Apple App Store](https://apps.apple.com/app/id6757355894)
   - Google Play (Coming Soon)
 
+- **Yum Roulette** (냠냠룰렛 / ヤムルーレット) - Smart food recommendation app
+  - [Apple App Store](https://apps.apple.com/app/id6757893232)
+  - [Google Play](https://play.google.com/store/apps/details?id=com.nulldev.lunchdecider)
+
 ## 🌍 Multi-language Support
 
 The website supports three languages:
@@ -34,9 +38,10 @@ Language preference is automatically detected from browser settings and saved in
 ## 📂 Structure
 
 ```
-Homepage/
+Home/
 ├── index.html           # Main page with multi-language support
-└── README.md           # This file
+├── assets/              # App icons and images
+└── README.md            # This file
 ```
 
 ## 🚀 Adding New Apps

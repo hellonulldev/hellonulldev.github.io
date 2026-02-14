@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NullDev - Privacy Policies</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: #5C6BC0;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover {
+            background: #3f51b5;
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: #3f51b5;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        h1 {
+            color: #5C6BC0;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+        }
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .app-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 18%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .app-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: #5C6BC0;
+            margin-bottom: 10px;
+        }
+        .app-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .app-languages {
+            display: flex;
+            gap: 8px;
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+        .language-tag {
+            background-color: #E8EAF6;
+            color: #5C6BC0;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            color: #999;
+        }
+        .footer a {
+            color: #5C6BC0;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="ko">한국어</button>
+        <button class="lang-btn" data-lang="ja">日本語</button>
+    </div>
+
+    <div class="header">
+        <h1>NullDev</h1>
+        <p class="subtitle" data-i18n="subtitle">Privacy Policies for All Apps</p>
+    </div>
+
+    <div class="apps-grid">
+        <!-- Indecisive App -->
+        <a href="Indecisive/" class="app-card">
+            <img src="../assets/indecisive-icon.png" alt="Indecisive App Icon" class="app-icon">
+            <div class="app-name">Indecisive</div>
+            <div class="app-description">
+                <span data-i18n="indecisive-local">결정장애 / 優柔不断</span><br>
+                <span data-i18n="indecisive-desc">Decision-making helper app</span>
+            </div>
+            <div class="app-languages">
+                <span class="language-tag">🇰🇷 한국어</span>
+                <span class="language-tag">🇺🇸 English</span>
+                <span class="language-tag">🇯🇵 日本語</span>
+            </div>
+        </a>
+
+        <!-- HabitThree App -->
+        <a href="HabitThree/" class="app-card">
+            <img src="../assets/habitthree-icon.png" alt="Three Habits App Icon" class="app-icon">
+            <div class="app-name" data-i18n="habitthree-name">Three Habits</div>
+            <div class="app-description">
+                <span data-i18n="habitthree-local">3개의 습관 / 3つの習慣</span><br>
+                <span data-i18n="habitthree-desc">Minimal habit tracker focusing on just 3 habits</span>
+            </div>
+            <div class="app-languages">
+                <span class="language-tag">🇰🇷 한국어</span>
+                <span class="language-tag">🇺🇸 English</span>
+                <span class="language-tag">🇯🇵 日本語</span>
+            </div>
+        </a>
+
+        <!-- SongMemory App -->
+        <a href="SongMemory/" class="app-card">
+            <img src="../assets/songmemory-icon.png" alt="Song Memory App Icon" class="app-icon">
+            <div class="app-name" data-i18n="songmemory-name">Song Memory</div>
+            <div class="app-description">
+                <span data-i18n="songmemory-local">노래의기억 / 歌の記憶</span><br>
+                <span data-i18n="songmemory-desc">Karaoke song manager with AI search</span>
+            </div>
+            <div class="app-languages">
+                <span class="language-tag">🇰🇷 한국어</span>
+                <span class="language-tag">🇺🇸 English</span>
+                <span class="language-tag">🇯🇵 日本語</span>
+            </div>
+        </a>
+
+        <!-- Yum Roulette App -->
+        <a href="YumRoulette/" class="app-card">
+            <img src="../assets/yumroulette-icon.png" alt="Yum Roulette App Icon" class="app-icon">
+            <div class="app-name" data-i18n="yumroulette-name">Yum Roulette</div>
+            <div class="app-description">
+                <span data-i18n="yumroulette-local">냠냠룰렛 / ヤムルーレット</span><br>
+                <span data-i18n="yumroulette-desc">Decide your meal in 1 second</span>
+            </div>
+            <div class="app-languages">
+                <span class="language-tag">🇰🇷 한국어</span>
+                <span class="language-tag">🇺🇸 English</span>
+                <span class="language-tag">🇯🇵 日本語</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer">
+        <p><strong>NullDev</strong> © 2026</p>
+        <p><span data-i18n="contact">Contact</span>: <a href="mailto:hello.nulldev@gmail.com">hello.nulldev@gmail.com</a></p>
+        <p style="margin-top: 20px; font-size: 12px;">
+            <span data-i18n="footer-text1">All apps are developed by NullDev</span><br>
+            <span data-i18n="footer-text2">Available on Google Play Store and Apple App Store</span>
+        </p>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                'subtitle': 'Privacy Policies for All Apps',
+                'indecisive-local': '결정장애 / 優柔不断',
+                'indecisive-desc': 'Decision-making helper app',
+                'habitthree-name': 'Three Habits',
+                'habitthree-local': '3개의 습관 / 3つの習慣',
+                'habitthree-desc': 'Minimal habit tracker focusing on just 3 habits',
+                'songmemory-name': 'Song Memory',
+                'songmemory-local': '노래의기억 / 歌の記憶',
+                'songmemory-desc': 'Karaoke song manager with AI search',
+                'yumroulette-name': 'Yum Roulette',
+                'yumroulette-local': '냠냠룰렛 / ヤムルーレット',
+                'yumroulette-desc': 'Decide your meal in 1 second',
+                'contact': 'Contact',
+                'footer-text1': 'All apps are developed by NullDev',
+                'footer-text2': 'Available on Google Play Store and Apple App Store'
+            },
+            ko: {
+                'subtitle': '모든 앱의 개인정보처리방침',
+                'indecisive-local': '결정장애 / 優柔不断',
+                'indecisive-desc': '결정 도우미 앱',
+                'habitthree-name': '3개의 습관',
+                'habitthree-local': '3개의 습관 / 3つの習慣',
+                'habitthree-desc': '3가지 습관에 집중하는 미니멀 습관 트래커',
+                'songmemory-name': '노래의기억',
+                'songmemory-local': '노래의기억 / 歌の記憶',
+                'songmemory-desc': 'AI로 노래를 찾고 관리하는 노래방 앱',
+                'yumroulette-name': '냠냠룰렛',
+                'yumroulette-local': '냠냠룰렛 / ヤムルーレット',
+                'yumroulette-desc': '1초 만에 메뉴 결정',
+                'contact': '문의',
+                'footer-text1': '모든 앱은 NullDev에서 개발되었습니다',
+                'footer-text2': 'Google Play 스토어 및 Apple 앱 스토어에서 이용 가능'
+            },
+            ja: {
+                'subtitle': 'すべてのアプリのプライバシーポリシー',
+                'indecisive-local': '결정장애 / 優柔不断',
+                'indecisive-desc': '決断サポートアプリ',
+                'habitthree-name': '3つの習慣',
+                'habitthree-local': '3개의 습관 / 3つの習慣',
+                'habitthree-desc': '3つの習慣に集中するミニマル習慣トラッカー',
+                'songmemory-name': '歌の記憶',
+                'songmemory-local': '노래의기억 / 歌の記憶',
+                'songmemory-desc': 'AIで曲を探して管理するカラオケアプリ',
+                'yumroulette-name': 'ヤムルーレット',
+                'yumroulette-local': '냠냠룰렛 / ヤムルーレット',
+                'yumroulette-desc': '1秒でメニュー決定',
+                'contact': 'お問い合わせ',
+                'footer-text1': 'すべてのアプリはNullDevによって開発されています',
+                'footer-text2': 'Google PlayストアとApple App Storeで利用可能'
+            }
+        };
+
+        // Language switching
+        const langButtons = document.querySelectorAll('.lang-btn');
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active button
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Update text content
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Load saved language preference or detect browser language
+        const savedLang = localStorage.getItem('preferredLanguage');
+        const browserLang = navigator.language.split('-')[0];
+        const initialLang = savedLang || (translations[browserLang] ? browserLang : 'en');
+        setLanguage(initialLang);
+    </script>
+</body>
+</html>
